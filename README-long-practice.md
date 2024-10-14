@@ -1,24 +1,24 @@
 # Additional Long Practice: Express Route Handlers
 
-**This is additional practice for today's material which you are not expected to
-complete today. Complete as much of this practice as you can. You can use any
-problems you didn't complete as optional additional practice for the
-assessment.**
+**This is additional practice for today's material which you are not
+expected to complete today. Complete as much of this practice as you
+can. You can use any problems you didn't complete as optional additional
+practice for the assessment.**
 
-Just like in the main Express Route Handlers practice, you will create endpoints
-in the Express server.
+Just like in the main Express Route Handlers practice, you will create
+endpoints in the Express server.
 
 ## API Documentation
 
-Using the following API documentation, create Express route handlers in the
-__app.js__ file. Use Postman to test each route as you write it.
+Using the following API documentation, create Express route handlers in
+the __app.js__ file. Use Postman to test each route as you write it.
 
-The actions that need to be executed in the endpoints are all exported from the
-__data.js__ file. In a route handler specific to each endpoint, you should send
-a JSON response of the serialized data returned from the referenced function.
-For example, to return a JSON array of all artists in the server data for a
-request to `GET /artists`, you should use the data from `getAllArtists()`
-function exported from the __data.js__ file.
+The actions that need to be executed in the endpoints are all exported
+from the __data.js__ file. In a route handler specific to each endpoint,
+you should send a JSON response of the serialized data returned from the
+referenced function.  For example, to return a JSON array of all artists
+in the server data for a request to `GET /artists`, you should use the
+data from `getAllArtists()` function exported from the __data.js__ file.
 
 ### Get a specific artist's details based on artistId
 
@@ -52,7 +52,8 @@ Response components:
   }
   ```
 
-Run `npm test test/05-specs.js` to make sure you set this endpoint correctly.
+Run `npm test test/05-specs.js` to make sure you set this endpoint
+correctly.
 
 ### Edit a specified artist by artistId
 
@@ -75,8 +76,8 @@ Response components:
 - Status Code: 200
 - Headers:
   - Content-Type: application/json
-- Body: information about the edited artist
-  (returned from `editArtistByArtistId(artistId, data)` function exported from
+- Body: information about the edited artist (returned from
+  `editArtistByArtistId(artistId, data)` function exported from
   __data.js__)
 
   ```json
@@ -86,7 +87,8 @@ Response components:
   }
   ```
 
-Run `npm test test/06-specs.js` to make sure you set this endpoint correctly.
+Run `npm test test/06-specs.js` to make sure you set this endpoint
+correctly.
 
 ### Delete a specified artist by artistId
 
@@ -112,7 +114,8 @@ Response components:
   }
   ```
 
-Run `npm test test/07-specs.js` to make sure you set this endpoint correctly.
+Run `npm test test/07-specs.js` to make sure you set this endpoint
+correctly.
 
 ### Get all albums of a specific artist based on artistId
 
@@ -128,8 +131,8 @@ Response components:
 - Status Code: 200
 - Headers:
   - Content-Type: application/json
-- Body: information about all the albums of a specific artist
-  (returned from `getAlbumsByArtistId(artistId)` function exported from
+- Body: information about all the albums of a specific artist (returned
+  from `getAlbumsByArtistId(artistId)` function exported from
   __data.js__)
 
   ```json
@@ -142,7 +145,8 @@ Response components:
   ]
   ```
 
-Run `npm test test/08-specs.js` to make sure you set this endpoint correctly.
+Run `npm test test/08-specs.js` to make sure you set this endpoint
+correctly.
 
 ### Get a specific album's details based on albumId
 
@@ -183,7 +187,8 @@ Response components:
   }
   ```
 
-Run `npm test test/09-specs.js` to make sure you set this endpoint correctly.
+Run `npm test test/09-specs.js` to make sure you set this endpoint
+correctly.
 
 ### Add an album to a specific artist based on artistId
 
@@ -206,8 +211,8 @@ Response components:
 - Status Code: 201
 - Headers:
   - Content-Type: application/json
-- Body: information about the newly created album
-  (returned from `addAlbumByArtistId(artistId, data)` function exported from
+- Body: information about the newly created album (returned from
+  `addAlbumByArtistId(artistId, data)` function exported from
   __data.js__)
 
   ```json
@@ -218,7 +223,8 @@ Response components:
   }
   ```
 
-Run `npm test test/10-specs.js` to make sure you set this endpoint correctly.
+Run `npm test test/10-specs.js` to make sure you set this endpoint
+correctly.
 
 ### Edit a specified album by albumId
 
@@ -241,8 +247,8 @@ Response components:
 - Status Code: 200
 - Headers:
   - Content-Type: application/json
-- Body: information about the edited album
-  (returned from `editAlbumByAlbumId(albumId, data)` function exported from
+- Body: information about the edited album (returned from
+  `editAlbumByAlbumId(albumId, data)` function exported from
   __data.js__)
 
   ```json
@@ -253,7 +259,8 @@ Response components:
   }
   ```
 
-Run `npm test test/11-specs.js` to make sure you set this endpoint correctly.
+Run `npm test test/11-specs.js` to make sure you set this endpoint
+correctly.
 
 ### Delete a specified album by albumId
 
@@ -269,9 +276,8 @@ Response components:
 - Status Code: 200
 - Headers:
   - Content-Type: application/json
-- Body: success message
-  (action of `deleteAlbumByAlbumId(albumId)` function exported from
-  __data.js__ should be executed)
+- Body: success message (action of `deleteAlbumByAlbumId(albumId)`
+  function exported from __data.js__ should be executed)
 
   ```json
   {
@@ -279,16 +285,16 @@ Response components:
   }
   ```
 
-Run `npm test test/12-specs.js` to make sure you set this endpoint correctly.
+Run `npm test test/12-specs.js` to make sure you set this endpoint
+correctly.
 
 ### Get all albums with names filtered by first letter
 
 Request components:
 
-<details>
-    <summary>Hint:</summary>
-    Do you remember how to grab the query parameters in Express? Refer to Request and Response Objects readings if you need a refresher.
-</details>
+<details> <summary>Hint:</summary> Do you remember how to grab the query
+    parameters in Express? Refer to Request and Response Objects
+    readings if you need a refresher.  </details>
 
 - Method: GET
 - URL: /albums?startsWith={letter}
@@ -300,9 +306,9 @@ Response components:
 - Status Code: 200
 - Headers:
   - Content-Type: application/json
-- Body: information about all the albums that have names starting with the
-  letter in the query parameter (returned from `getFilteredAlbums(startsWith)`
-  function exported from __data.js__)
+- Body: information about all the albums that have names starting with
+  the letter in the query parameter (returned from
+  `getFilteredAlbums(startsWith)` function exported from __data.js__)
 
   ```json
   [
@@ -314,7 +320,8 @@ Response components:
   ]
   ```
 
-Run `npm test test/13-specs.js` to make sure you set this endpoint correctly.
+Run `npm test test/13-specs.js` to make sure you set this endpoint
+correctly.
 
 ### Get a specific song's details based on songId
 
@@ -353,7 +360,8 @@ Response components:
   }
   ```
 
-Run `npm test test/14-specs.js` to make sure you set this endpoint correctly.
+Run `npm test test/14-specs.js` to make sure you set this endpoint
+correctly.
 
 ### Add a song to a specific album based on albumId
 
@@ -379,9 +387,8 @@ Response components:
 - Status Code: 201
 - Headers:
   - Content-Type: application/json
-- Body: information about the newly created song
-  (returned from `addSongByAlbumId(albumId, data)` function exported from
-  __data.js__)
+- Body: information about the newly created song (returned from
+  `addSongByAlbumId(albumId, data)` function exported from __data.js__)
 
   ```json
   {
@@ -393,7 +400,8 @@ Response components:
   }
   ```
 
-Run `npm test test/15-specs.js` to make sure you set this endpoint correctly.
+Run `npm test test/15-specs.js` to make sure you set this endpoint
+correctly.
 
 ### Get all songs of a specific artist based on artistId
 
@@ -409,8 +417,8 @@ Response components:
 - Status Code: 200
 - Headers:
   - Content-Type: application/json
-- Body: information about all the songs of a specific artist
-  (returned from `getSongsByArtistId(artistId)` function exported from
+- Body: information about all the songs of a specific artist (returned
+  from `getSongsByArtistId(artistId)` function exported from
   __data.js__)
 
   ```json
@@ -423,7 +431,8 @@ Response components:
   ]
   ```
 
-Run `npm test test/16-specs.js` to make sure you set this endpoint correctly.
+Run `npm test test/16-specs.js` to make sure you set this endpoint
+correctly.
 
 ### Get all songs of a specific album based on albumId
 
@@ -453,7 +462,8 @@ Response components:
   ]
   ```
 
-Run `npm test test/17-specs.js` to make sure you set this endpoint correctly.
+Run `npm test test/17-specs.js` to make sure you set this endpoint
+correctly.
 
 ### Edit a specified song by songId
 
@@ -478,9 +488,8 @@ Response components:
 - Status Code: 200
 - Headers:
   - Content-Type: application/json
-- Body: information about the edited song
-  (returned from `editSongBySongId(songId, data)` function exported from
-  __data.js__)
+- Body: information about the edited song (returned from
+  `editSongBySongId(songId, data)` function exported from __data.js__)
 
   ```json
   {
@@ -492,7 +501,8 @@ Response components:
   }
   ```
 
-Run `npm test test/18-specs.js` to make sure you set this endpoint correctly.
+Run `npm test test/18-specs.js` to make sure you set this endpoint
+correctly.
 
 ### Delete a specified song by songId
 
@@ -508,9 +518,8 @@ Response components:
 - Status Code: 200
 - Headers:
   - Content-Type: application/json
-- Body: success message
-  (action of `deleteSongBySongId(songId)` function exported from
-  __data.js__ should be executed)
+- Body: success message (action of `deleteSongBySongId(songId)` function
+  exported from __data.js__ should be executed)
 
   ```json
   {
@@ -518,4 +527,5 @@ Response components:
   }
   ```
 
-Run `npm test test/19-specs.js` to make sure you set this endpoint correctly.
+Run `npm test test/19-specs.js` to make sure you set this endpoint
+correctly.
