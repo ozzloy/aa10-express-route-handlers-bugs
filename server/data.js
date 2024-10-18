@@ -59,6 +59,7 @@ exports.editArtistByArtistId = (artistId, data) => {
 };
 
 exports.deleteArtistByArtistId = (artistId) => {
+  const artist = artists[artistId];
   delete artists[artistId];
   const artistAlbums = Object.values(albums).filter(
     (album) => album.artistId == artistId,
@@ -70,7 +71,7 @@ exports.deleteArtistByArtistId = (artistId) => {
       delete songs[song.songId];
     }
   });
-  return artists[artistId];
+  return artist;
 };
 
 exports.getAlbumsForLatestArtist = () => {
@@ -116,13 +117,14 @@ exports.editAlbumByAlbumId = (albumId, data) => {
 };
 
 exports.deleteAlbumByAlbumId = (albumId) => {
+  const album = albums[albumId];
   delete albums[albumId];
   Object.values(songs).forEach((song) => {
     if (song.albumId == albumId) {
       delete songs[song.songId];
     }
   });
-  return albums[albumId];
+  return album;
 };
 
 exports.getFilteredAlbums = (startsWith) => {
@@ -187,6 +189,7 @@ exports.editSongBySongId = (songId, data) => {
 };
 
 exports.deleteSongBySongId = (songId) => {
+  const song = songs[songId];
   delete songs[songId];
-  return songs[songId];
+  return song;
 };
